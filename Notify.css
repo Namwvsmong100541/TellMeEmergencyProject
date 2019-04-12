@@ -1,0 +1,142 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    
+    
+}
+
+.logout {
+    background: #BD4747;
+    height: 5%;
+    color: white;
+    width: 100%;
+
+}
+
+
+.logout .studentID{
+    background:#F95858;
+    width: 110px;
+    height: 20px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+
+}
+
+
+.out {
+    float: right;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+
+.out img{
+    margin-top: 3px;
+}
+
+.header {
+    width: 100%;
+    height: 5%;
+    background:#BD4747;
+    color: white ;
+    font-size: 10px;
+    text-align: center;
+    padding:5px;
+
+}
+
+.header h2{
+    margin-bottom: 120px; 
+}
+
+.map{
+    background: white;
+    width: 100%;
+    height: 35%;
+    padding:5px;
+    border: #CECCCC 1px;
+    border-style: solid; 
+
+}
+
+.specifyInformation {
+    background: #F5F5F5;
+    width: 100%;
+    height: 45%;
+    border: #CECCCC 1px;
+    border-style: solid; 
+} 
+
+.specifyInformation textarea{
+    margin-right: 40px;
+    float: right;
+    margin-top: 20px;
+    border-radius: 4px;
+   
+    
+}
+
+.container .attachPicture {
+        background: #BD4747;
+        width: 50px;
+        height: 45px;;
+        padding:5px;   
+        float: left;  
+        margin-top: 20px; 
+        margin-left: 40px;
+        border-radius:10px;
+}
+
+.attachPicture img{
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+
+.specifyphonenumber {
+    float: right;
+    margin-top: 20px;
+    margin-right: 75px;
+    border-radius: 2px; 
+    
+}
+
+.container .attachvoice {
+    background: #BD4747;
+    width: 50px;
+    height: 45px;;
+    padding:5px;   
+    float: left;  
+    margin-top: 20px; 
+    margin-left: 40px;
+    border-radius:10px;
+}
+
+.attachvoice img{
+    margin-left: 10px;
+    margin-top: 8px;
+
+}
+
+.menubar img{
+    float: right;
+    margin-right: 15px;
+    margin-top: 5px;
+    padding-right: 35px;
+    
+}
+
+.menubar{
+    background: white;
+    width: 100%;
+    height: 45px;;
+    border:#CECCCC 1px;
+    border-style: solid; 
+    
+}
+
