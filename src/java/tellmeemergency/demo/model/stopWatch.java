@@ -1,4 +1,4 @@
-package java.tellmeemergency.demo.model;
+package tellmeemergency.demo.model;
 
 public class StopWatch {
 

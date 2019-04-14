@@ -1,4 +1,4 @@
-package java.tellmeemergency.demo.model;
+package tellmeemergency.demo.model;
 import java.sql.Time;
 public class ReportEvent{
     private String DescriptionEmergency;

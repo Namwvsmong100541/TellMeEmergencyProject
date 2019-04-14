@@ -1,3 +1,4 @@
+package tellmeemergency.demo.datasource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -8,7 +9,6 @@ import java.util.logging.Logger;
 public class ConnectionBuilder {
 
     public static Connection mainConnection = null;
-
     public static Connection getConnection() {
         Connection con = null;
         try {

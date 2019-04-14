@@ -1,4 +1,4 @@
-package java.tellmeemergency.demo.model;
+package tellmeemergency.demo.model;
 public class status {
     private int statusID;
     private String statusWord;

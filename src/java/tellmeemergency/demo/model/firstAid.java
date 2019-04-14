@@ -1,15 +1,15 @@
-package java.tellmeemergency.demo.model;
+package tellmeemergency.demo.model;
 
-public class firstAid {
+public class FirstAid {
     private int firstAidId;
     private String typeOfEmergency;
     private String Description;
 
 
-    public firstAid() {
+    public FirstAid() {
     }
 
-    public firstAid(int firstAidId, String typeOfEmergency, String Description) {
+    public FirstAid(int firstAidId, String typeOfEmergency, String Description) {
         this.firstAidId = firstAidId;
         this.typeOfEmergency = typeOfEmergency;
         this.Description = Description;
@@ -61,7 +61,7 @@ public class firstAid {
         if (!(o instanceof firstAid)) {
             return false;
         }
-        firstAid firstAid = (firstAid) o;
+        FirstAid firstAid = (FirstAid) o;
         return firstAidId == firstAid.firstAidId && Objects.equals(typeOfEmergency, firstAid.typeOfEmergency) && Objects.equals(Description, firstAid.Description);
     }
 
