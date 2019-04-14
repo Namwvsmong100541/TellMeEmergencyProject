@@ -1,14 +1,17 @@
 package tellmeemergency.demo.model;
 import java.sql.Time;
+import java.util.Map;
+import java.util.Objects;
+
 public class ReportEvent{
     private String DescriptionEmergency;
     private Time time;
-    private map location;
+    private Map location;
 
-    public reportEvent() {
+    public ReportEvent() {
     }
 
-    public reportEvent(String DescriptionEmergency, Time time, map location) {
+    public ReportEvent(String DescriptionEmergency, Time time, Map location) {
         this.DescriptionEmergency = DescriptionEmergency;
         this.time = time;
         this.location = location;
@@ -30,25 +33,25 @@ public class ReportEvent{
         this.time = time;
     }
 
-    public map getLocation() {
+    public Map getLocation() {
         return this.location;
     }
 
-    public void setLocation(map location) {
+    public void setLocation(Map location) {
         this.location = location;
     }
 
-    public reportEvent DescriptionEmergency(String DescriptionEmergency) {
+    public ReportEvent DescriptionEmergency(String DescriptionEmergency) {
         this.DescriptionEmergency = DescriptionEmergency;
         return this;
     }
 
-    public reportEvent time(Time time) {
+    public ReportEvent time(Time time) {
         this.time = time;
         return this;
     }
 
-    public reportEvent location(map location) {
+    public ReportEvent location(Map location) {
         this.location = location;
         return this;
     }
@@ -57,10 +60,10 @@ public class ReportEvent{
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof reportEvent)) {
+        if (!(o instanceof ReportEvent)) {
             return false;
         }
-        reportEvent reportEvent = (reportEvent) o;
+        ReportEvent reportEvent = (ReportEvent) o;
         return Objects.equals(DescriptionEmergency, reportEvent.DescriptionEmergency) && Objects.equals(time, reportEvent.time) && Objects.equals(location, reportEvent.location);
     }
 

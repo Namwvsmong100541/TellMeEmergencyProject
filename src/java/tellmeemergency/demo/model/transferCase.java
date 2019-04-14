@@ -1,12 +1,14 @@
 package tellmeemergency.demo.model;
-public class transfercase {
-    private int transfercaseId;
-    private String timeAlert;
+import java.util.Objects;
 
-    public transfercase() {
+public class Transfercase {
+    public int transfercaseId;
+    public String timeAlert;
+
+    public Transfercase() {
     }
 
-    public transfercase(int transfercaseId, String timeAlert) {
+    public Transfercase(int transfercaseId, String timeAlert) {
         this.transfercaseId = transfercaseId;
         this.timeAlert = timeAlert;
     }
@@ -27,25 +29,14 @@ public class transfercase {
         this.timeAlert = timeAlert;
     }
 
-    public transfercase transfercaseId(int transfercaseId) {
+    public Transfercase transfercaseId(int transfercaseId) {
         this.transfercaseId = transfercaseId;
         return this;
     }
 
-    public transfercase timeAlert(String timeAlert) {
+    public Transfercase timeAlert(String timeAlert) {
         this.timeAlert = timeAlert;
         return this;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof transfercase)) {
-            return false;
-        }
-        transfercase transfercase = (transfercase) o;
-        return transfercaseId == transfercase.transfercaseId && Objects.equals(timeAlert, transfercase.timeAlert);
     }
 
     @Override

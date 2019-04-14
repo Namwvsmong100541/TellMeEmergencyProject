@@ -4,8 +4,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import tellmeemergency.demo.datasource.ConnectionBuilder;
 
 public class User{
 
@@ -198,11 +200,28 @@ public class User{
             ", position='" + getPosition() + "'" +
             "}";
     }
+    
+    private static void ORM(User u, ResultSet rs) {
+        try {
+            u.setId(rs.getInt("user_id"));
+            u.setName(rs.getString("user_name"));
+            u.setSurname(rs.getString("user_surname"));
+            u.setFaculty(rs.getString("user_faculty"));
+            u.setEmail(rs.getString("user_email"));
+            u.setUsername(rs.getString("user_username"));
+            u.setPassword(rs.getString("user_password"));
+            u.setStdId(rs.getLong("user_stdid"));
+            u.setGender(rs.getString("user_gender"));
+            u.setPosition(rs.getInt("user_position"));
+        } catch (SQLException ex) {
+            Logger.getLogger(Event.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     public boolean addUser() {
         try {
             Connection conn = ConnectionBuilder.getConnection();
-           // String sqlCmd = "INSERT INTO member(member_name, member_surname, member_stdId, member_gender, member_faculty, member_email,"
-           //         + " member_username, member_password, member_position) VALUES(?,?,?,?,?,?,?,?,?)";
+            String sqlCmd = "INSERT INTO member(member_name, member_surname, member_stdId, member_gender, member_faculty, member_email,"
+                    + " member_username, member_password, member_position) VALUES(?,?,?,?,?,?,?,?,?)";
             PreparedStatement pstm = conn.prepareStatement(sqlCmd);
             pstm.setString(1, name);
             pstm.setString(2, surname);
@@ -229,31 +248,31 @@ public class User{
         try {
             Connection conn = ConnectionBuilder.getConnection();
             Statement stmt = conn.createStatement();
-          //  String sqlCmd = "SELECT * FROM member WHERE member_id = " + member_id;
+            String sqlCmd = "SELECT * FROM user WHERE user_id = " + user_id;
             ResultSet rs = stmt.executeQuery(sqlCmd);
             while (rs.next()) {
-                u = new Member();
+                u = new User();
                 ORM(u, rs);
             }
         } catch (SQLException ex) {
-         //   Logger.getLogger(Ticket.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Event.class.getName()).log(Level.SEVERE, null, ex);
         }
         return u;
     }
     public static int getIdByUsername(String username) throws SQLException {
-     //   String sqlCmd = "SELECT `member_id` FROM `member` WHERE member_username = '" + username + "'";
+        String sqlCmd = "SELECT `user_id` FROM `user` WHERE user_username = '" + username + "'";
         Connection conn = ConnectionBuilder.getConnection();
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sqlCmd);
         int id = 0;
         if(rs.next()){
-            id = rs.getInt("member_id");
+            id = rs.getInt("user_id");
         }
         return id;
     }
     
     public static int getPositionByUsername(String username) throws SQLException {
-       // String sqlCmd = "SELECT `member_position` FROM `member` WHERE member_username = '" + username + "'";
+        String sqlCmd = "SELECT `member_position` FROM `member` WHERE member_username = '" + username + "'";
         Connection conn = ConnectionBuilder.getConnection();
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sqlCmd);
@@ -267,8 +286,8 @@ public class User{
     public static boolean isUser(String user_username, String user_password) {
         try {
             Connection conn = ConnectionBuilder.getConnection();
-         //   String sqlCmd = "SELECT * FROM member WHERE member_username = '" + member_username + "' AND member_password = '"
-         //           + member_password + "'";
+            String sqlCmd = "SELECT * FROM user WHERE user_username = '" + user_username + "' AND user_password = '"
+                    + user_password + "'";
             PreparedStatement ps = conn.prepareStatement(sqlCmd);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -281,8 +300,4 @@ public class User{
         return false;
     }
 
-    @Override
-    public String toString() {
-        return "User{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", stdId=" + stdId + ", gender=" + gender + ", faculty=" + faculty + ", email=" + email + ", username=" + username + ", password=" + password + ", position=" + position + '}';
-    }
 }

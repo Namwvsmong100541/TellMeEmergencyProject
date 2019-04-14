@@ -1,12 +1,15 @@
 package tellmeemergency.demo.model;
-public class status {
+
+import java.util.Objects;
+
+public class Status {
     private int statusID;
     private String statusWord;
 
-    public status() {
+    public Status() {
     }
 
-    public status(int statusID, String statusWord) {
+    public Status(int statusID, String statusWord) {
         this.statusID = statusID;
         this.statusWord = statusWord;
     }
@@ -27,26 +30,16 @@ public class status {
         this.statusWord = statusWord;
     }
 
-    public status statusID(int statusID) {
+    public Status statusID(int statusID) {
         this.statusID = statusID;
         return this;
     }
 
-    public status statusWord(String statusWord) {
+    public Status statusWord(String statusWord) {
         this.statusWord = statusWord;
         return this;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof status)) {
-            return false;
-        }
-        status status = (status) o;
-        return statusID == status.statusID && Objects.equals(statusWord, status.statusWord);
-    }
 
     @Override
     public int hashCode() {

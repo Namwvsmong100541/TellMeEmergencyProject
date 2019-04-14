@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import tellmeemergency.demo.datasource.ConnectionBuilder;
 
 public class Event {
 
@@ -126,13 +127,13 @@ public class Event {
         Event e = null;
         try {
             Connection con = ConnectionBuilder.getConnection();
-         //   String sqlCmd = "SELECT * FROM event WHERE event_id = ?";
+            String sqlCmd = "SELECT * FROM event WHERE event_id = ?";
             PreparedStatement pstm = con.prepareStatement(sqlCmd);
             pstm.setInt(1, id);
             ResultSet rs = pstm.executeQuery();
             if (rs.next()) {
                 e = new Event();
-                ORM(t, rs);
+                ORM(e, rs);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Event.class.getName()).log(Level.SEVERE, null, ex);
@@ -141,30 +142,30 @@ public class Event {
     }
     private static void ORM(Event e, ResultSet rs) {
         try {
-            t.setId(rs.getInt("event_id"));
-            t.setName(rs.getString("event_name"));
-            t.setDesc(rs.getString("event_desc"));
-            t.setPlace(rs.getString("event_place"));
-            t.setStatus(rs.getInt("event_status"));
-            t.setUserId(rs.getInt("event_user"));
+            e.setId(rs.getInt("event_id"));
+            e.setName(rs.getString("event_name"));
+            e.setDesc(rs.getString("event_desc"));
+            e.setPlace(rs.getString("event_place"));
+            e.setStatus(rs.getInt("event_status"));
+            e.setUserId(rs.getInt("event_user"));
         } catch (SQLException ex) {
             Logger.getLogger(Event.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public static List<Ticket> getAllEvents() {
+    public static List<Event> getAllEvents() {
         Event e = null;
-        Event<Event> events = null;
+        List<Event> events = null;
         try {
             Connection conn = ConnectionBuilder.getConnection();
             Statement stmt = conn.createStatement();
-          //  String sqlCmd = "SELECT * FROM event";
+            String sqlCmd = "SELECT * FROM event";
             ResultSet rs = stmt.executeQuery(sqlCmd);
             while (rs.next()) {
                 e = new Event();
                 ORM(e, rs);
                 if (events == null) {
-                    events = new ArrayList<Ticket>();
+                    events = new ArrayList<Event>();
                 }
                 events.add(e);
             }
@@ -173,19 +174,19 @@ public class Event {
         }
         return events;
     }
-    public static Event<Event> getMyEvents(int userId) {
+    public static List<Event> getMyEvents(int userId) {
         Event e = null;
-        Event<Event> events = null;
+        List<Event> events = null;
         try {
             Connection conn = ConnectionBuilder.getConnection();
             Statement stmt = conn.createStatement();
-         //   String sqlCmd = "SELECT * FROM `event` WHERE event_user = "+userId;
+            String sqlCmd = "SELECT * FROM `event` WHERE event_user = "+userId;
             ResultSet rs = stmt.executeQuery(sqlCmd);
             while (rs.next()) {
                 e = new Event();
                 ORM(e, rs);
                 if (events == null) {
-                    events = new ArrayList<Ticket>();
+                    events = new ArrayList<Event>();
                 }
                 events.add(e);
             }
@@ -198,7 +199,7 @@ public class Event {
         if (name.length() > 0 && desc.length() > 0 && place.length() > 0) {
             try {
                 Connection conn = ConnectionBuilder.getConnection();
-            //    String sqlCmd = "INSERT INTO event(event_name, event_desc, event_place,event_status,event_user) VALUES(?,?,?,0,?)";
+                String sqlCmd = "INSERT INTO event(event_name, event_desc, event_place,event_status,event_user) VALUES(?,?,?,0,?)";
                 PreparedStatement pstm = conn.prepareStatement(sqlCmd);
                 pstm.setString(1, name);
                 pstm.setString(2, desc);
@@ -217,7 +218,7 @@ public class Event {
     public static boolean update(int event_id, int event_status) {
         try {
             Connection conn = ConnectionBuilder.getConnection();
-         //   String sqlCmd = "UPDATE event SET event_status = " + event_status + " WHERE event_id = " + event_id;
+            String sqlCmd = "UPDATE event SET event_status = " + event_status + " WHERE event_id = " + event_id;
             PreparedStatement pstm = conn.prepareStatement(sqlCmd);
             int result = pstm.executeUpdate();
             if (result != 0) {
@@ -234,7 +235,7 @@ public class Event {
         try {
             Connection conn = ConnectionBuilder.getConnection();
             Statement stmt = conn.createStatement();
-        //    String sqlCmd = "SELECT * FROM event WHERE event_id = " + event_id;
+            String sqlCmd = "SELECT * FROM event WHERE event_id = " + event_id;
             ResultSet rs = stmt.executeQuery(sqlCmd);
             while (rs.next()) {
                 e = new Event();
@@ -248,7 +249,7 @@ public class Event {
     public static boolean delete(int event_id) {
         try {
             Connection conn = ConnectionBuilder.getConnection();
-         //   String sqlCmd = "DELETE FROM event WHERE event_id = " + event_id;
+            String sqlCmd = "DELETE FROM event WHERE event_id = " + event_id;
             PreparedStatement pstm = conn.prepareStatement(sqlCmd);
             int result = pstm.executeUpdate();
             if (result != 0) {
@@ -272,16 +273,5 @@ public class Event {
         return "";
     }
 }
-    @Override
-    public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", name='" + getName() + "'" +
-            ", desc='" + getDesc() + "'" +
-            ", place='" + getPlace() + "'" +
-            ", status='" + getStatus() + "'" +
-            ", userId='" + getUserId() + "'" +
-            "}";
-    }
+
     
-}

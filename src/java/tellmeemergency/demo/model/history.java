@@ -1,5 +1,5 @@
-package java.tellmeemergency.demo.model;
-import java.awt.Event;
+package tellmeemergency.demo.model;
+import java.util.Objects;
 
 public class History{
     private int historyId;
@@ -64,8 +64,5 @@ public class History{
             "}";
     }
 
-    public static History displayHistory(int id){
-
-    }
 
 }

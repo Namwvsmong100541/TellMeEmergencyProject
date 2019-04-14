@@ -1,14 +1,16 @@
 package tellmeemergency.demo.model;
 
-public class locationDetail {
+import java.util.Objects;
+
+public class LocationDetail {
     private String nameOfLocationDetail;
     private int locationDetailId;
     private int floor;
 
-    public locationDetail() {
+    public LocationDetail() {
     }
 
-    public locationDetail(String nameOfLocationDetail, int locationDetailId, int floor) {
+    public LocationDetail(String nameOfLocationDetail, int locationDetailId, int floor) {
         this.nameOfLocationDetail = nameOfLocationDetail;
         this.locationDetailId = locationDetailId;
         this.floor = floor;
@@ -38,17 +40,17 @@ public class locationDetail {
         this.floor = floor;
     }
 
-    public locationDetail nameOfLocationDetail(String nameOfLocationDetail) {
+    public LocationDetail nameOfLocationDetail(String nameOfLocationDetail) {
         this.nameOfLocationDetail = nameOfLocationDetail;
         return this;
     }
 
-    public locationDetail locationDetailId(int locationDetailId) {
+    public LocationDetail locationDetailId(int locationDetailId) {
         this.locationDetailId = locationDetailId;
         return this;
     }
 
-    public locationDetail floor(int floor) {
+    public LocationDetail floor(int floor) {
         this.floor = floor;
         return this;
     }
@@ -57,10 +59,10 @@ public class locationDetail {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof locationDetail)) {
+        if (!(o instanceof LocationDetail)) {
             return false;
         }
-        locationDetail locationDetail = (locationDetail) o;
+        LocationDetail locationDetail = (LocationDetail) o;
         return Objects.equals(nameOfLocationDetail, locationDetail.nameOfLocationDetail) && locationDetailId == locationDetail.locationDetailId && floor == locationDetail.floor;
     }
 

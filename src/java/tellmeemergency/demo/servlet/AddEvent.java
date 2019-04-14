@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import *.model.Event;
+import tellmeemergency.demo.model.Event;
 
 public class AddEvent extends HttpServlet {
 

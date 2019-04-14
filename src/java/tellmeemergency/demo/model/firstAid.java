@@ -1,4 +1,5 @@
 package tellmeemergency.demo.model;
+import java.util.Objects;
 
 public class FirstAid {
     private int firstAidId;
@@ -39,17 +40,17 @@ public class FirstAid {
         this.Description = Description;
     }
 
-    public firstAid firstAidId(int firstAidId) {
+    public FirstAid firstAidId(int firstAidId) {
         this.firstAidId = firstAidId;
         return this;
     }
 
-    public firstAid typeOfEmergency(String typeOfEmergency) {
+    public FirstAid typeOfEmergency(String typeOfEmergency) {
         this.typeOfEmergency = typeOfEmergency;
         return this;
     }
 
-    public firstAid Description(String Description) {
+    public FirstAid Description(String Description) {
         this.Description = Description;
         return this;
     }
@@ -58,7 +59,7 @@ public class FirstAid {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof firstAid)) {
+        if (!(o instanceof FirstAid)) {
             return false;
         }
         FirstAid firstAid = (FirstAid) o;
