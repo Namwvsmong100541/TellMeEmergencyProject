@@ -1,0 +1,148 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    
+    
+}
+
+.logout {
+    background:#BD4747;
+    height: 30px;
+    color: white;
+    width: 100%;
+    padding: 5px;
+}
+
+
+.logout .studentID{
+    background:#F95858;
+    width: 100px;
+    height: 20px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 10px;
+
+}
+
+.studentID h6{
+ 
+}
+
+
+.out {
+    float: right;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-right: 15px;
+}
+
+
+.out img{
+    margin-top: 3px;
+}
+
+.header {
+    width: 100%;
+    height: 40px;
+    background:#BD4747;
+    color: white ;
+    font-size: 10px;
+    text-align: center;
+    padding:5px;
+
+}
+
+.header h2{
+    margin-bottom: 120px; 
+}
+
+.map{
+    background: gainsboro;
+    width: 100%;
+    height: 245px;
+    padding:5px;
+    border: #CECCCC 1px;
+    border-style: solid; 
+
+}
+
+.specifyInformation {
+    background: gray;
+    width: 100%;
+    height: 240px;
+    border: #CECCCC 1px;
+    border-style: solid; 
+    padding: 5px;
+} 
+
+.specifyInformation textarea{
+    margin-right: 40px;
+    float: right;
+    margin-top: 20px;
+    border-radius: 4px;
+   
+    
+}
+
+.container .attachPicture {
+        background: #BD4747;
+        width: 50px;
+        height: 45px;;
+        padding:5px;   
+        float: left;  
+        margin-top: 20px; 
+        margin-left: 40px;
+        border-radius:10px;
+}
+
+.attachPicture img{
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+
+.specifyphonenumber {
+    float: right;
+    margin-top: 20px;
+    margin-right: 75px;
+    border-radius: 2px; 
+    
+}
+
+.container .attachvoice {
+    background: #BD4747;
+    width: 50px;
+    height: 45px;;
+    padding:5px;   
+    float: left;  
+    margin-top: 20px; 
+    margin-left: 40px;
+    border-radius:10px;
+}
+
+.attachvoice img{
+    margin-left: 10px;
+    margin-top: 8px;
+
+}
+
+.menubar img{
+    float: right;
+    margin-right: 15px;
+    margin-top: 5px;
+    padding-right: 35px;
+    
+}
+
+.menubar{
+    background: white;
+    width: 100%;
+    height: 50px;;
+    border:#CECCCC 1px;
+    border-style: solid; 
+    float: bottom;
+    padding: 5px;
+}
+
