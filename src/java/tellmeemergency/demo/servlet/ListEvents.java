@@ -3,67 +3,56 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tellmeemergency.demo.servlet;
+package mykmutt.report.demo.servlet;
+
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import tellmeemergency.demo.model.Event;
+import mykmutt.report.demo.model.Ticket;
 
-public class AddEvent extends HttpServlet {
+public class ListEvents extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        String target = "/Notify.jsp";
+        String target = "/ListEvents.jsp";
         String code = null;
         String alert = null;
         String message = null;
         HttpSession session = request.getSession(false);
+        String position = (String) session.getAttribute("user_position");
+
         if (session != null) {
             if (session.getAttribute("user_id") != null && session.getAttribute("isLoged").equals("yes")) {
-                try{
-                String name = request.getParameter("name");
-                String desc = request.getParameter("desc");
-                String place = request.getParameter("place");
-                int id = Integer.parseInt((String) session.getAttribute("user_id"));
-                Event e = new Event(name, desc, place,id);
-                if (e.addEvent()) {
-                    code = "success";
-                    alert = "Success!";
-                    message = "The event is now notified.";
-                } else {
-                    code = "warning";
-                    alert = "Warning!";
-                    message = "Cannot notify the event.";
+                if (position.equals("1")) {
+                    target = "/UpdateStatus.jsp";        
                 }
-                } catch (Exception ex) {
-                    System.out.println("AddEvent.ex: "+ex);
-                    
-                }
+                List<Event> events = Event.getAllTickets();
+                request.setAttribute("events", events);
             } else {
                 code = "Error";
                 alert = "Error!";
                 message = "Re-Login Pleased.";
-                target = "/Login.jsp";
+                target = "/login.jsp";
             }
         } else {
             code = "Error";
             alert = "Error!";
-            message = "Re-Login1 Pleased.";
+            message = "Re-Login Pleased.";
         }
-        
         request.setAttribute("code", code);
         request.setAttribute("alert", alert);
         request.setAttribute("message", message);
         getServletContext().getRequestDispatcher(target).forward(request, response);
     }
 
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -101,7 +90,5 @@ public class AddEvent extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-}
 
 }
