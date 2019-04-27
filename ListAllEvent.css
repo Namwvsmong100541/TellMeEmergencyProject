@@ -80,7 +80,7 @@ body{
 }
 
 .emergency h6{
-    loat: left;
+    float: left;
     margin-left: 5px;
     margin-top: 10px;
 }
