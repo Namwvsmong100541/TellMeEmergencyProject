@@ -1,0 +1,135 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    
+    
+
+    
+}
+.logout {
+    background:#BD4747;
+    height: 25px;
+    color: white;
+    width: 100%;
+    padding: 5px;
+    
+   
+}
+
+.OfficerID h6{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+
+
+ 
+
+.logout .out{
+    float: right;
+    font-size: 12px;
+    margin-right: 15px;
+    margin-top: 3px;
+    
+    
+}
+
+.header {
+    width: 100%;
+    height: 30px;
+    background:#BD4747;
+    color: white ;
+    font-size: 10px;
+    text-align: center;
+    padding:5px;
+    
+    
+    
+}
+
+.header h2{
+    margin-bottom: 100px;
+}
+
+.event{
+    background: gainsboro;
+    width: 100%;
+    height: 550px;
+}
+
+
+.eventarea{
+    background: whitesmoke;
+    width: 300px;
+    height: 120px; 
+    margin-left: 10%;
+    border:#CECCCC 1px;
+    border-style: solid; 
+    border-radius:10px; 
+    float: left;
+    margin-top: 20px ;
+}
+
+.eventarea .emergency{
+    background: gray;
+    width: 170px;
+    height: 50px;
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+.emergency h6{
+    loat: left;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+
+
+.event button{
+    float: right;
+    margin-bottom: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+
+
+.notify img{
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 20px;
+    
+}
+.notify h6{
+    float: left;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.timedate h6{
+    float: right;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+
+.menubar {
+    background: whitesmoke;
+    width: 100%;
+    height: 45px;
+    border:#CECCCC 1px;
+    border-style: solid; 
+}
+.menubar img{
+    float: right;
+    margin-right: 15px;
+    margin-top: 5px;
+    padding-right: 35px;
+    
+}
+
