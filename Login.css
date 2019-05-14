@@ -1,6 +1,53 @@
+@media screen and (min-width: 415px) {
     body{
+        padding: 0%;
+        margin: 0%;
+    }
+    .logo img{
+        display: block;
+       padding-left:20px;
+        margin-right: auto;
+    }
+    .login{
+        float:left;
+        margin-left:40%;
+        margin-top:100px;
+        text-align: center;
+
+    }
+    .logo{
+        width: 200px;
+        height: 300px;
+    }
+    .logo form{
+        margin-top: 15%;
+        text-align: center;
+    
+    }
+    .logo input{
+        margin: 5%;
+    }
+    .logo label{
+        float: right;
+        margin-top: 4%;
+        padding-right:20px;
+    }
+    .logo button{
+        float: right;
+       text-align: center;
+       padding-left:25px;
+        padding-right:30px;
+        margin-top: 60px;
+        margin-right: 50px;
+        border-radius:6px; 
+    }
+  }
+
+
+
+body{
         padding: 63px;
-        margin: 0;
+        margin: 0%;
         font-family: 'Montserrat', sans-serif;
         
         
