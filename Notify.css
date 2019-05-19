@@ -1,7 +1,61 @@
+@media screen and (min-width: 700px) {
+    .button1 button{
+        float: left;
+        margin-left: 600px;
+        margin-top: 30px;
+        padding-right: 50px;
+        padding-left: 50px;
+        
+    }
+    .specifyInformation{
+        width: 100%;
+        height: 500px;
+    }
+    
+
+    .textarea1 textarea{
+        border: 2px solid white ;
+        float: left;
+        width: 500px;
+       
+    }
+
+    .specifyInformation .attachPicture{
+      
+        float: left;
+        margin-left: 600px;
+    }
+    .specifyphonenumber input{
+        float: right;
+        margin-top: 100px;
+        margin-right: 150px;
+        border: 2px solid white ;
+    }
+    .specifyInformation .attachvoice{
+        float: left;
+        margin-top: 100px;
+    }
+
+    .container .attachPicture{
+        margin-left: 200px;
+    }
+
+    .menubar img{
+        float:center;
+        margin-right: 15px;
+        margin-top: 5px;
+        padding-right: 35px;
+        text-align: center;
+        
+    }
+}
+
 body{
     padding: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 100%;
     
     
 }
@@ -16,7 +70,7 @@ body{
 
 
 .logout .studentID{
-    background:#F95858;
+    background: #BD4747;
     width: 100px;
     height: 15px;
     float: left;
@@ -55,30 +109,33 @@ body{
     font-size: 10px;
     text-align: center;
     padding:5px;
-
+    border-color: gainsboro;
+    border:1px solid 
 }
 
 .header h2{
-    margin-bottom: 120px; 
+    text-align: center;
 }
 
 .map{
     background: gainsboro;
     width: 100%;
-    height: 245px;
+    height: 280px;
     padding:5px;
     border: #CECCCC 1px;
     border-style: solid; 
+    
 
 }
 
 .specifyInformation {
     background: gray;
     width: 100%;
-    height: 230px;
+    height: 250px;
     border: #CECCCC 1px;
     border-style: solid; 
     padding: 5px;
+    
 } 
 
 .specifyInformation textarea{
@@ -148,5 +205,24 @@ body{
     border-style: solid; 
     float: bottom;
     padding: 5px;
+    text-align: center;
+  position: fixed;
+  top: 615px;
+  left: auto;
+  
+    
+}
+button{
+    margin-top: 40px;
+    margin-left: 50px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius:6px; 
+    background: #BD4747;
+    color: white;
+    border-color: white;
 }
 
